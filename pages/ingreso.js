@@ -11,7 +11,10 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  
 } from "@chakra-ui/react";
+
+import NextLink from "next/link";
 
 export default function SimpleCard() {
   return (
@@ -23,9 +26,9 @@ export default function SimpleCard() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>Sign in to your account</Heading>
+          <Heading fontSize={"4xl"}>Logueate</Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool <Link color={"blue.400"}>features</Link> ✌️
+            Para poder  <Link color={"blue.400"}>cuidarte</Link> ✌️
           </Text>
         </Stack>
         <Box
@@ -36,11 +39,11 @@ export default function SimpleCard() {
         >
           <Stack spacing={4}>
             <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>Email</FormLabel>
               <Input type="email" />
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Contraseña</FormLabel>
               <Input type="password" />
             </FormControl>
             <Stack spacing={10}>
@@ -49,9 +52,10 @@ export default function SimpleCard() {
                 align={"start"}
                 justify={"space-between"}
               >
-                <Checkbox>Remember me</Checkbox>
-                <Link color={"blue.400"}>Forgot password?</Link>
+                <Checkbox>Recordar Cuenta</Checkbox>
+                <Link color={"blue.400"}>Olvidaste la contraseña?</Link>
               </Stack>
+              <NextLink href = "/bienvenida">
               <Button
                 bg={"blue.400"}
                 color={"white"}
@@ -59,8 +63,10 @@ export default function SimpleCard() {
                   bg: "blue.500",
                 }}
               >
-                Sign in
+                Ingresar
+                
               </Button>
+              </NextLink>
             </Stack>
           </Stack>
         </Box>

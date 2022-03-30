@@ -30,10 +30,10 @@ export default function SignupCard() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign up
+            Registrarse
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool features ✌️
+            para poder cuidarte ✌️
           </Text>
         </Stack>
         <Box
@@ -42,27 +42,13 @@ export default function SignupCard() {
           boxShadow={"lg"}
           p={8}
         >
-          <Stack spacing={4}>
-            <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl id="lastName">
-                  <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-            </HStack>
+          <Stack spacing={4}>           
             <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>Email</FormLabel>
               <Input type="email" />
             </FormControl>
             <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Contraseña</FormLabel>
               <InputGroup>
                 <Input type={showPassword ? "text" : "password"} />
                 <InputRightElement h={"full"}>
@@ -76,7 +62,11 @@ export default function SignupCard() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
-            </FormControl>
+            </FormControl>            
+                <FormControl id="firstName" isRequired>
+                  <FormLabel>Codigo Postal</FormLabel>
+                  <Input type="text" />
+                </FormControl>           
             <Stack spacing={10} pt={2}>
               <Button
                 loadingText="Submitting"
@@ -87,14 +77,14 @@ export default function SignupCard() {
                   bg: "blue.500",
                 }}
               >
-                Sign up
+                Registrarse
               </Button>
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user?{" "}
+                Ya tienes un usuario?{" "}
                 <Link href="/ingreso" color={"blue.400"}>
-                  Login
+                  Ingresar
                 </Link>
               </Text>
             </Stack>

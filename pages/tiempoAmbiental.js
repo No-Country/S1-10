@@ -4,13 +4,15 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
+    Radio,
     Stack,
     Link,
     Button,
     Heading,
     Text,
     useColorModeValue,
+    RadioGroup,
+    
   } from "@chakra-ui/react";
   
   export default function SimpleCard() {
@@ -23,7 +25,7 @@ import {
       >
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
-            <Heading fontSize={"3xl"}>Bienvenido</Heading>
+            <Heading fontSize={"3xl"}>Salud</Heading>
           </Stack>
           <Box
             rounded={"lg"}
@@ -35,11 +37,20 @@ import {
             <Stack spacing={4} align="center">
               <FormControl id="bienvenida">
                 <FormLabel fontSize={"2xl"} justify={"center"}>
-                  ¿Cuál es tu problema?
+                  ¿Por cuanto ha observado estos inconvenientes?
                 </FormLabel>
               </FormControl>
-  
-              <Stack spacing={6} direction="row" align="center">
+              <RadioGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
+                    <Stack spacing={[1, 5]} direction={['column']}>
+                    <Radio value='tiempo1'>Menos de 7 dias</Radio>
+                    <Radio value='tiempo2'>Entre 7 y 14 dias</Radio>
+                    <Radio value='tiempo3'>Mas de 2 semanas</Radio>                
+                    <Radio value='tiempo4'>Otro</Radio>
+                    </Stack>
+                </RadioGroup>
+            </Stack>          
+          </Box>
+          <Stack spacing={6} direction="row" align="center">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -48,7 +59,7 @@ import {
                     bg: "blue.500",
                   }}
                 >
-                  Salud
+                  👈 Volver 
                 </Button>
                 <Button
                   px={35}
@@ -58,11 +69,9 @@ import {
                     bg: "blue.500",
                   }}
                 >
-                  Ambiental
+                  Siguiente 👉
                 </Button>
               </Stack>
-            </Stack>
-          </Box>
         </Stack>
       </Flex>
     );

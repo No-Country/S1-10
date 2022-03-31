@@ -11,7 +11,6 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  
 } from "@chakra-ui/react";
 
 import NextLink from "next/link";
@@ -28,7 +27,7 @@ export default function SimpleCard() {
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>Logueate</Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            Para poder  <Link color={"blue.400"}>cuidarte</Link> ✌️
+            Para poder <Link color={"blue.400"}>cuidarte</Link> ✌️
           </Text>
         </Stack>
         <Box
@@ -55,17 +54,16 @@ export default function SimpleCard() {
                 <Checkbox>Recordar Cuenta</Checkbox>
                 <Link color={"blue.400"}>Olvidaste la contraseña?</Link>
               </Stack>
-              <NextLink href = "/bienvenida">
-              <Button
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Ingresar
-                
-              </Button>
+              <NextLink href="/bienvenida" passHref>
+                <Button
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  Ingresar
+                </Button>
               </NextLink>
             </Stack>
           </Stack>

@@ -42,18 +42,18 @@ export default function SimpleCard() {
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href = "/problema">
-              <Button
-                href={"/problema"}
-                px={38}
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                SI
-              </Button>
+              <NextLink href="/problema" passHref>
+                <Button
+                  href={"/problema"}
+                  px={38}
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  SI
+                </Button>
               </NextLink>
               <NextLink href = "/despedida">
               <Button

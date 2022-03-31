@@ -18,9 +18,38 @@ import {
 import NextLink from "next/link";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [error, setError] = useState(null);
+  //const [cookies, setCookie, removeCookie] = useCookies(null);
+
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (password !== confirmPassword) {
+        setError("No coincide la contraseña");
+        return;
+      }
+
+      const response = await axios.post(
+        "http://localhost:3000/api/users/signup",
+        { email, password }
+      );
+      const success = response.status == 201;
+
+      if (success) router.push("/datosPerfil");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Flex
@@ -44,7 +73,7 @@ export default function SignupCard() {
           boxShadow={"lg"}
           p={8}
         >
-          <Stack spacing={4}>           
+          <Stack spacing={4}>
             <FormControl id="email" isRequired>
               <FormLabel>Email</FormLabel>
               <Input type="email" />

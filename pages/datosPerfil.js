@@ -14,6 +14,9 @@ import {
     useColorModeValue,
     Link,
   } from "@chakra-ui/react";
+
+  import NextLink from "next/link";
+
   import { useState } from "react";
   import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
   
@@ -56,6 +59,7 @@ import {
                     <Input type="number" />
                 </FormControl>           
               <Stack spacing={10} pt={2}>
+                <NextLink href = "/bienvenida">
                 <Button
                   loadingText="Submitting"
                   size="lg"
@@ -67,6 +71,7 @@ import {
                 >
                   Guardar
                 </Button>
+                </NextLink>
               </Stack>
             </Stack>
           </Box>

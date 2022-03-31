@@ -55,6 +55,7 @@ export default function SimpleCard() {
                 SI
               </Button>
               </NextLink>
+              <NextLink href = "/despedida">
               <Button
                 px={35}
                 bg={"blue.400"}
@@ -65,6 +66,7 @@ export default function SimpleCard() {
               >
                 NO
               </Button>
+              </NextLink>
             </Stack>
           </Stack>
         </Box>

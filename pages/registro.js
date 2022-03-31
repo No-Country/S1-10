@@ -14,6 +14,8 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
+
+import NextLink from "next/link";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
@@ -68,6 +70,7 @@ export default function SignupCard() {
                   <Input type="text" />
                 </FormControl>           
             <Stack spacing={10} pt={2}>
+              <NextLink href = "/datosPerfil">
               <Button
                 loadingText="Submitting"
                 size="lg"
@@ -79,6 +82,7 @@ export default function SignupCard() {
               >
                 Registrarse
               </Button>
+              </NextLink>
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>

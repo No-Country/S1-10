@@ -13,6 +13,8 @@ import {
     useColorModeValue,
   } from "@chakra-ui/react";
   
+  import NextLink from "next/link";
+
   export default function SimpleCard() {
     return (
       <Flex
@@ -40,6 +42,7 @@ import {
               </FormControl>
   
               <Stack spacing={6} direction="row" align="center">
+                <NextLink href = "/salud">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -50,6 +53,8 @@ import {
                 >
                   Salud
                 </Button>
+                </NextLink>
+                <NextLink href= "/ambiental">  
                 <Button
                   px={35}
                   bg={"blue.400"}
@@ -60,6 +65,7 @@ import {
                 >
                   Ambiental
                 </Button>
+                </NextLink>
               </Stack>
             </Stack>
           </Box>

@@ -1,22 +1,21 @@
+
 import {
     Flex,
     Box,
     FormControl,
     FormLabel,
     Input,
-    Radio,
+    Checkbox,
     Stack,
     Link,
     Button,
     Heading,
     Text,
     useColorModeValue,
-    RadioGroup,
-    
+    CheckboxGroup
   } from "@chakra-ui/react";
-  
+
   import NextLink from "next/link";
-  
   export default function SimpleCard() {
     return (
       <Flex
@@ -39,21 +38,26 @@ import {
             <Stack spacing={4} align="center">
               <FormControl id="bienvenida">
                 <FormLabel fontSize={"2xl"} justify={"center"}>
-                  ¿Por cuanto tiempo ha presentado sintomas?
+                  ¿Que sintomas son?
                 </FormLabel>
               </FormControl>
-              <RadioGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
+              <CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
                     <Stack spacing={[1, 5]} direction={['column']}>
-                    <Radio value='tiempo1'>Menos de 7 dias</Radio>
-                    <Radio value='tiempo2'>Entre 7 y 14 dias</Radio>
-                    <Radio value='tiempo3'>Mas de 2 semanas</Radio>                
-                    <Radio value='tiempo4'>Otro</Radio>
+                    <Checkbox value='Gastrointeritis'>Alergias</Checkbox>
+                    <Checkbox value='Respiratorio'>Tos</Checkbox>
+                    <Checkbox value='Lesiones de Piel'>Congestion</Checkbox>
+                    <Checkbox value='Fiebre'>Asma</Checkbox>
+                    <Checkbox value='Picadura de Insecto'>Dificultad Respiratoria</Checkbox>
+                    <Checkbox value='Mordedura de animal'>Fiebre</Checkbox>
+                    <Checkbox value='Dolores Focalizados'>Perdida Olfato/Gusto</Checkbox>
+                    <Checkbox value='Mareos'>Mareos</Checkbox>
+                    <Checkbox value='Otros'>Otros</Checkbox>
                     </Stack>
-                </RadioGroup>
+                </CheckboxGroup>
             </Stack>          
           </Box>
           <Stack spacing={6} direction="row" align="center">
-            <NextLink href = "/salud">
+            <NextLink href ="/problema">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -65,7 +69,7 @@ import {
                   👈 Volver 
                 </Button>
                 </NextLink>
-                <NextLink href = "/moreSintomas">
+                <NextLink href = "/recomendaciones">
                 <Button
                   px={35}
                   bg={"blue.400"}

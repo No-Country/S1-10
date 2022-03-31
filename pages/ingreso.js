@@ -53,6 +53,9 @@ export default function SimpleCard() {
               >
                 <Checkbox>Recordar Cuenta</Checkbox>
                 <Link color={"blue.400"}>Olvidaste la contraseña?</Link>
+                <NextLink href = "/registro">
+                <Link color={"blue.400"}>No tienes cuenta?</Link>
+                </NextLink>
               </Stack>
               <NextLink href="/bienvenida" passHref>
                 <Button

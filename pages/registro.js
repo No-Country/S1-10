@@ -14,6 +14,8 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
+
+import NextLink from "next/link";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import axios from "axios";
@@ -106,41 +108,12 @@ export default function SignupCard() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <FormControl id="confirmPassword" isRequired>
-              <FormLabel>Confirmar Contraseña</FormLabel>
-              <InputGroup>
-                <Input
-                  type={showPassword ? "text" : "password"}
-                  id="password-check"
-                  name="password-check"
-                  placeholder="confirm password"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-                <InputRightElement h={"full"}>
-                  <Button
-                    variant={"ghost"}
-                    onClick={() =>
-                      setShowPassword((showPassword) => !showPassword)
-                    }
-                  >
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
-            <FormControl id="codigoPostal" isRequired>
+            <FormControl id="firstName" isRequired>
               <FormLabel>Codigo Postal</FormLabel>
-              <Input
-                type="number"
-                id="postal"
-                name="postal"
-                placeholder="codigo postal"
-                onChange={(e) => setPostal(e.target.value)}
-              />
+              <Input type="text" />
             </FormControl>
-
-            <Link href="/datosPerfil">
-              <Stack spacing={10} pt={2}>
+            <Stack spacing={10} pt={2}>
+              <NextLink href="/datosPerfil">
                 <Button
                   loadingText="Submitting"
                   size="lg"
@@ -152,9 +125,8 @@ export default function SignupCard() {
                 >
                   Registrarse
                 </Button>
-              </Stack>
-            </Link>
-
+              </NextLink>
+            </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
                 Ya tienes un usuario?{" "}

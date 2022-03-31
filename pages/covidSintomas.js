@@ -1,22 +1,21 @@
+
 import {
     Flex,
     Box,
     FormControl,
     FormLabel,
     Input,
-    Radio,
+    Checkbox,
     Stack,
     Link,
     Button,
     Heading,
     Text,
     useColorModeValue,
-    RadioGroup,
-    
+    CheckboxGroup
   } from "@chakra-ui/react";
-  
-  import NextLink from "next/link";
 
+  import NextLink from "next/link";
   export default function SimpleCard() {
     return (
       <Flex
@@ -27,7 +26,7 @@ import {
       >
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
-            <Heading fontSize={"3xl"}>Ambiental</Heading>
+            <Heading fontSize={"3xl"}>Salud</Heading>
           </Stack>
           <Box
             rounded={"lg"}
@@ -39,21 +38,26 @@ import {
             <Stack spacing={4} align="center">
               <FormControl id="bienvenida">
                 <FormLabel fontSize={"2xl"} justify={"center"}>
-                  ¿Por cuanto ha observado estos inconvenientes?
+                  ¿Que sintomas son?
                 </FormLabel>
               </FormControl>
-              <RadioGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
+              <CheckboxGroup colorScheme='green' defaultValue={['naruto', 'kakashi']}>
                     <Stack spacing={[1, 5]} direction={['column']}>
-                    <Radio value='tiempo1'>Menos de 7 dias</Radio>
-                    <Radio value='tiempo2'>Entre 7 y 14 dias</Radio>
-                    <Radio value='tiempo3'>Mas de 2 semanas</Radio>                
-                    <Radio value='tiempo4'>Otro</Radio>
+                    <Checkbox value='Gastrointeritis'>Alergias</Checkbox>
+                    <Checkbox value='Respiratorio'>Tos</Checkbox>
+                    <Checkbox value='Lesiones de Piel'>Congestion</Checkbox>
+                    <Checkbox value='Fiebre'>Asma</Checkbox>
+                    <Checkbox value='Picadura de Insecto'>Dificultad Respiratoria</Checkbox>
+                    <Checkbox value='Mordedura de animal'>Fiebre</Checkbox>
+                    <Checkbox value='Dolores Focalizados'>Perdida Olfato/Gusto</Checkbox>
+                    <Checkbox value='Mareos'>Mareos</Checkbox>
+                    <Checkbox value='Otros'>Otros</Checkbox>
                     </Stack>
-                </RadioGroup>
+                </CheckboxGroup>
             </Stack>          
           </Box>
           <Stack spacing={6} direction="row" align="center">
-            <NextLink href = "/ambiental">
+            <NextLink href ="/problema">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -65,6 +69,7 @@ import {
                   👈 Volver 
                 </Button>
                 </NextLink>
+                <NextLink href = "/recomendaciones">
                 <Button
                   px={35}
                   bg={"blue.400"}
@@ -75,6 +80,7 @@ import {
                 >
                   Siguiente 👉
                 </Button>
+                </NextLink>
               </Stack>
         </Stack>
       </Flex>

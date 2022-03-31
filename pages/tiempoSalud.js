@@ -15,6 +15,8 @@ import {
     
   } from "@chakra-ui/react";
   
+  import NextLink from "next/link";
+  
   export default function SimpleCard() {
     return (
       <Flex
@@ -51,6 +53,7 @@ import {
             </Stack>          
           </Box>
           <Stack spacing={6} direction="row" align="center">
+            <NextLink href = "/salud">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -61,6 +64,8 @@ import {
                 >
                   👈 Volver 
                 </Button>
+                </NextLink>
+                <NextLink href = "/moreSintomas">
                 <Button
                   px={35}
                   bg={"blue.400"}
@@ -71,6 +76,7 @@ import {
                 >
                   Siguiente 👉
                 </Button>
+                </NextLink>
               </Stack>
         </Stack>
       </Flex>

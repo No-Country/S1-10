@@ -24,6 +24,7 @@ export default function SignupCard() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
+  const [postal, setPostal] = useState(null);
   const [error, setError] = useState(null);
   //const [cookies, setCookie, removeCookie] = useCookies(null);
 
@@ -36,10 +37,11 @@ export default function SignupCard() {
         setError("No coincide la contraseña");
         return;
       }
+      console.log("posting", email, password, postal);
 
       const response = await axios.post(
         "http://localhost:3000/api/users/signup",
-        { email, password }
+        { email, password, postal }
       );
       const success = response.status == 201;
 
@@ -74,12 +76,24 @@ export default function SignupCard() {
           <Stack spacing={4}>
             <FormControl id="email" isRequired>
               <FormLabel>Email</FormLabel>
-              <Input type="email" />
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Contraseña</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  placeholder="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
@@ -95,7 +109,13 @@ export default function SignupCard() {
             <FormControl id="confirmPassword" isRequired>
               <FormLabel>Confirmar Contraseña</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  id="password-check"
+                  name="password-check"
+                  placeholder="confirm password"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
@@ -110,7 +130,13 @@ export default function SignupCard() {
             </FormControl>
             <FormControl id="codigoPostal" isRequired>
               <FormLabel>Codigo Postal</FormLabel>
-              <Input type="number" />
+              <Input
+                type="number"
+                id="postal"
+                name="postal"
+                placeholder="codigo postal"
+                onChange={(e) => setPostal(e.target.value)}
+              />
             </FormControl>
 
             <Link href="/datosPerfil">

@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
-  const { email, password } = req.body;
+  console.log(req.body);
+  const { email, password, postal } = req.body;
 
   const generatedUserId = uuidv4();
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -14,6 +15,7 @@ export default async function handler(req, res) {
     user_id: generatedUserId,
     email: sanitizedEmail,
     hashed_password: hashedPassword,
+    postal_code: postal,
   };
 
   //const data = await db.collection("users").find({}).toArray();

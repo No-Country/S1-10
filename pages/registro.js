@@ -16,9 +16,38 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [error, setError] = useState(null);
+  //const [cookies, setCookie, removeCookie] = useCookies(null);
+
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (password !== confirmPassword) {
+        setError("No coincide la contraseña");
+        return;
+      }
+
+      const response = await axios.post(
+        "http://localhost:3000/api/users/signup",
+        { email, password }
+      );
+      const success = response.status == 201;
+
+      if (success) router.push("/datosPerfil");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Flex
@@ -42,7 +71,7 @@ export default function SignupCard() {
           boxShadow={"lg"}
           p={8}
         >
-          <Stack spacing={4}>           
+          <Stack spacing={4}>
             <FormControl id="email" isRequired>
               <FormLabel>Email</FormLabel>
               <Input type="email" />
@@ -62,24 +91,44 @@ export default function SignupCard() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
-            </FormControl>            
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>Codigo Postal</FormLabel>
-                  <Input type="text" />
-                </FormControl>           
-            <Stack spacing={10} pt={2}>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Registrarse
-              </Button>
-            </Stack>
+            </FormControl>
+            <FormControl id="confirmPassword" isRequired>
+              <FormLabel>Confirmar Contraseña</FormLabel>
+              <InputGroup>
+                <Input type={showPassword ? "text" : "password"} />
+                <InputRightElement h={"full"}>
+                  <Button
+                    variant={"ghost"}
+                    onClick={() =>
+                      setShowPassword((showPassword) => !showPassword)
+                    }
+                  >
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </FormControl>
+            <FormControl id="codigoPostal" isRequired>
+              <FormLabel>Codigo Postal</FormLabel>
+              <Input type="number" />
+            </FormControl>
+
+            <Link href="/datosPerfil">
+              <Stack spacing={10} pt={2}>
+                <Button
+                  loadingText="Submitting"
+                  size="lg"
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  Registrarse
+                </Button>
+              </Stack>
+            </Link>
+
             <Stack pt={6}>
               <Text align={"center"}>
                 Ya tienes un usuario?{" "}

@@ -113,7 +113,7 @@ export default function SignupCard() {
               <Input type="text" />
             </FormControl>
             <Stack spacing={10} pt={2}>
-              <NextLink href="/datosPerfil">
+              <NextLink href="/datosPerfil" passHref>
                 <Button
                   loadingText="Submitting"
                   size="lg"

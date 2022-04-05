@@ -23,7 +23,7 @@ const Ingreso = ({ providers, session }) => {
   console.log({ providers, session });
 
   useEffect(() => {
-    if (session) return Router.push("/bienvenida");
+    if (session) return Router.push("/");
   }, [session]);
 
   if (session) return null;

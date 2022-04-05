@@ -7,7 +7,6 @@ import clientPromise from "lib/mongodb";
 
 export default NextAuth({
   // Configure one or more authentication providers
-  //session: { jwt: true },
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
@@ -20,5 +19,4 @@ export default NextAuth({
     }),
   ],
   pages: { signIn: "/ingreso" },
-  // database: process.env.MONGODB_URI,
 });

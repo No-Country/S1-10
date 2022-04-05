@@ -14,14 +14,26 @@ import {
 } from "@chakra-ui/react";
 
 import NextLink from "next/link";
+import { getProviders, getSession, signIn, signOut } from "next-auth/react";
+import BtnLogin from "./../components/BtnLogin";
+import { useEffect } from "react";
+import Router from "next/router";
 
-export default function SimpleCard() {
+const Ingreso = ({ providers, session }) => {
+  console.log({ providers, session });
+
+  useEffect(() => {
+    if (session) return Router.push("/bienvenida");
+  }, [session]);
+
+  if (session) return null;
+
   return (
     <Flex
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      // bg={useColorModeValue("gray.50", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -32,7 +44,7 @@ export default function SimpleCard() {
         </Stack>
         <Box
           rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
+          // bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
           p={8}
         >
@@ -53,25 +65,50 @@ export default function SimpleCard() {
               >
                 <Checkbox>Recordar Cuenta</Checkbox>
                 <Link color={"blue.400"}>Olvidaste la contraseña?</Link>
-                <NextLink href = "/registro">
-                <Link color={"blue.400"}>No tienes cuenta?</Link>
+                <NextLink href="/registro" passHref>
+                  <Link color={"blue.400"}>No tienes cuenta?</Link>
                 </NextLink>
               </Stack>
-              <NextLink href="/bienvenida" passHref>
-                <Button
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={{
-                    bg: "blue.500",
-                  }}
-                >
-                  Ingresar
-                </Button>
-              </NextLink>
+              {/* <NextLink href="/bienvenida" passHref></NextLink> */}
+              <Button
+                bg={"blue.400"}
+                color={"white"}
+                _hover={{
+                  bg: "blue.500",
+                }}
+                onClick={() => signIn(providers.id)}
+              >
+                Ingresar con {providers.google.name}
+              </Button>
+
+              <BtnLogin provider={providers.google} bgColor={"red"}></BtnLogin>
+              <BtnLogin
+                provider={providers.facebook}
+                bgColor={"blue"}
+              ></BtnLogin>
+              <Button
+                bg={"blue.400"}
+                color={"white"}
+                _hover={{
+                  bg: "blue.500",
+                }}
+                onClick={() => signOut()}
+              >
+                Salir
+              </Button>
             </Stack>
           </Stack>
         </Box>
       </Stack>
     </Flex>
   );
-}
+};
+
+Ingreso.getInitialProps = async (context) => {
+  return {
+    providers: await getProviders(context),
+    session: await getSession(context),
+  };
+};
+
+export default Ingreso;

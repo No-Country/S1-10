@@ -10,14 +10,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main>Home</main>
 
       <footer></footer>
     </div>
   );
 }
 
-export async function getServerSideProps(context) {
+/* export async function getServerSideProps(context) {
   try {
     // client.db() will be the default database passed in the MONGODB_URI
     // You can change the database by calling the client.db() function and specifying a database like:
@@ -38,3 +38,4 @@ export async function getServerSideProps(context) {
     };
   }
 }
+ */

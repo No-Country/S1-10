@@ -1,7 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
+import { getSession, signIn, signOut } from "next-auth/react";
+import Sidebar from "./../components/Sidebar";
 
-export default function Home() {
+const Home = ({ session }) => {
+  console.log("Home function: ", session);
+
   return (
     <div>
       <Head>
@@ -10,12 +13,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>Home</main>
+      {/* <main>Home</main> */}
+      <Sidebar />
 
       <footer></footer>
     </div>
   );
-}
+};
+
+export default Home;
 
 /* export async function getServerSideProps(context) {
   try {
@@ -39,3 +45,22 @@ export default function Home() {
   }
 }
  */
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  console.log("Get Server side: ", session);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/ingreso",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+};

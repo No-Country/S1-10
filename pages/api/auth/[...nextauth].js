@@ -18,4 +18,10 @@ export default NextAuth({
     }),
   ],
   pages: { signIn: "/ingreso" },
+  callbacks: {
+    session: async (token, user, account, profile, isNewUser) => {
+      console.log({ token, user, account, profile, isNewUser });
+      return Promise.resolve(session);
+    },
+  },
 });

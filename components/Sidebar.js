@@ -35,15 +35,17 @@ import {
   FiLogOut,
   FiUser,
 } from "react-icons/fi";
-import { getProviders, getSession, signIn, signOut } from "next-auth/react";
+import {
+  getProviders,
+  getSession,
+  signIn,
+  signOut,
+  useSession,
+} from "next-auth/react";
 
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 
-/* interface LinkItemProps {
-  name: string;
-  icon: IconType;
-}*/
 const LinkItems = [
   { name: "Home", icon: FiHome },
   { name: "Explore", icon: FiCompass },
@@ -52,6 +54,10 @@ const LinkItems = [
 
 export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [session, loading] = useSession();
+
+  console.log({ session, loading });
+
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -200,7 +206,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">User Name</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>

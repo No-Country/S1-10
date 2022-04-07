@@ -3,7 +3,7 @@ import { getSession, signIn, signOut } from "next-auth/react";
 import Sidebar from "./../components/Sidebar";
 
 const Home = ({ session }) => {
-  console.log("Home function: ", session);
+  //{ session } console.log("Home function: ", session);
 
   return (
     <div>
@@ -54,7 +54,7 @@ export const getServerSideProps = async (context) => {
   if (!session) {
     return {
       redirect: {
-        destination: "/ingreso",
+        destination: "/",
         permanent: false,
       },
     };

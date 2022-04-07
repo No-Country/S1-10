@@ -78,7 +78,7 @@ export default function SimpleCard() {
           </Stack>
         </Box>
         <Stack spacing={6} direction="row" align="center">
-          <NextLink href="/problema">
+          <NextLink href="/problema" passHref>
             <Button
               px={38}
               bg={"blue.400"}

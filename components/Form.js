@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ProblemaSalud from "./ProblemaSalud";
-import Sintomas from "./Sintomas";
-import TiempoProblema from "./TiempoProblema";
+import Symptoms from "./Symptoms";
+import ProblemHealth from "./ProblemHealth";
+import TimeProblem from "./TimeProblem";
 
 import {
   Flex,
@@ -22,22 +22,23 @@ import axios from "axios";
 const Form = () => {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    problem: "",
+    problem: [],
     checkedItem: false,
     symptom: [],
-    time: "",
+    time: "7",
     checkedItemTime: false,
+    checkedRadio: true,
   });
 
   const formTitles = ["Problema", "Tiempo", "Síntomas"];
 
   const pageDisplay = () => {
     if (page == 0)
-      return <ProblemaSalud formData={formData} setFormData={setFormData} />;
+      return <ProblemHealth formData={formData} setFormData={setFormData} />;
     if (page == 1)
-      return <TiempoProblema formData={formData} setFormData={setFormData} />;
+      return <TimeProblem formData={formData} setFormData={setFormData} />;
     if (page == 2)
-      return <Sintomas formData={formData} setFormData={setFormData} />;
+      return <Symptoms formData={formData} setFormData={setFormData} />;
   };
 
   return (
@@ -89,6 +90,7 @@ const Form = () => {
             onClick={() => {
               if (page === formTitles.length - 1) {
                 alert("listo");
+                console.log(formData);
               } else {
                 setPage((currentPage) => currentPage + 1);
               }

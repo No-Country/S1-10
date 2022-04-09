@@ -12,7 +12,7 @@ const Sintomas = ({ formData, setFormData }) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        symptom: [e.target.value],
+        symptom: [...formData.symptom, e.target.value],
         checkedSymptom: true,
       });
     } else {
@@ -46,7 +46,7 @@ const Sintomas = ({ formData, setFormData }) => {
           ¿Que sintomas son?
         </FormLabel>
       </FormControl>
-      <CheckboxGroup colorScheme="green">
+      <CheckboxGroup colorScheme="green" value={formData.symptom}>
         <Stack spacing={[1, 5]} direction={["column"]}>
           {symptoms.map((item) => (
             <Checkbox key={item} value={item} onChange={handleCheck}>

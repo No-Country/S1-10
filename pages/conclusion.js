@@ -25,7 +25,7 @@ export default function SimpleCard() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"3xl"}>Bienvenido</Heading>
+          <Heading fontSize={"3xl"}>Conclusión</Heading>
         </Stack>
         <Box
           rounded={"lg"}
@@ -35,14 +35,16 @@ export default function SimpleCard() {
           align="center"
         >
           <Stack spacing={4} align="center">
-            <FormControl id="bienvenida">
-              <FormLabel fontSize={"2xl"} justify={"center"}>
-                ¿Podemos ayudarte?
-              </FormLabel>
+            <FormControl id="conclusion">
+              <Text fontSize={"2xl"} justify={"center"}>
+                Usted presenta síntomas similares al cuadro de Covid. Debe
+                concurrir a un centro asistencial a realizar el examen
+                correspondiente y seguir las indicaciones del profesional.
+              </Text>
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href="/problema" passHref>
+              <NextLink href="/bienvenida" passHref>
                 <Button
                   href={"/problema"}
                   px={38}
@@ -52,10 +54,10 @@ export default function SimpleCard() {
                     bg: "blue.500",
                   }}
                 >
-                  SI
+                  Inicio
                 </Button>
               </NextLink>
-              <NextLink href="/despedida" passHref>
+              <NextLink href="/prediccion" passHref>
                 <Button
                   px={35}
                   bg={"blue.400"}
@@ -64,7 +66,7 @@ export default function SimpleCard() {
                     bg: "blue.500",
                   }}
                 >
-                  NO
+                  Siguiente
                 </Button>
               </NextLink>
             </Stack>

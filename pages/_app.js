@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { SessionProvider } from "next-auth/react";
+import { extendTheme } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (

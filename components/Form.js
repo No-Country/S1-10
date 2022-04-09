@@ -19,8 +19,10 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const Form = () => {
+  const router = useRouter();
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     problem: [],
@@ -87,8 +89,10 @@ const Form = () => {
             }}
             onClick={() => {
               if (page === formTitles.length - 1) {
-                alert(formData);
+                //alert(formData);
                 //console.log(formData);
+                //<NextLink href="/conclusion" passHref></NextLink>;
+                router.push("/conclusion");
               } else {
                 setPage((currentPage) => currentPage + 1);
               }

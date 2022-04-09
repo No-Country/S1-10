@@ -25,7 +25,7 @@ import {
       >
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
-            <Heading fontSize={"3xl"}>Bienvenido</Heading>
+            <Heading fontSize={"3xl"}>Salud</Heading>
           </Stack>
           <Box
             rounded={"lg"}
@@ -37,12 +37,12 @@ import {
             <Stack spacing={4} align="center">
               <FormControl id="bienvenida">
                 <FormLabel fontSize={"2xl"} justify={"center"}>
-                  ¿Cuál es tu problema?
+                  ¿Presenta Mas Sintomas?
                 </FormLabel>
               </FormControl>
   
               <Stack spacing={6} direction="row" align="center">
-                <NextLink href = "/salud">
+                <NextLink href = "/covidSintomas">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -51,10 +51,10 @@ import {
                     bg: "blue.500",
                   }}
                 >
-                  Salud
+                  Si
                 </Button>
                 </NextLink>
-                <NextLink href= "/ambiental">  
+                <NextLink href= "/">  
                 <Button
                   px={35}
                   bg={"blue.400"}
@@ -63,7 +63,7 @@ import {
                     bg: "blue.500",
                   }}
                 >
-                  Ambiental
+                  No
                 </Button>
                 </NextLink>
               </Stack>

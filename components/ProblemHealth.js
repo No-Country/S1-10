@@ -104,30 +104,3 @@ export default Problema;
         </Stack>
       </CheckboxGroup> */
 }
-
-{
-  /* {allProblems.map((problem) => (
-            <div key={problem.name}>
-              <input
-                type="checkbox"
-                id={`checkbox-${problem.name}`}
-                onChange={handleCheck}
-              />
-              <label htmlFor={`checkbox-${problem.name}`}>{problem.name}</label>
-            </div>
-))} */
-}
-
-/* test input checkbox
-<input
-            type="checkbox"
-            value="Gastrointeritis"
-            id="Gastrointeritis"
-            checked="false"
-            onChange={handleCheck}
-          />
-          <label htmlFor="Gastrointeritis">Gastrointeritis</label>
-          <input type="checkbox" id="Fiebre" onChange={handleCheck} />
-          <label htmlFor="Fiebre">Fiebre</label>
-          <input type="checkbox" id="Tos" onChange={handleCheck} />
-          <label htmlFor="Tos">Tos</label> */

@@ -19,8 +19,8 @@ export default NextAuth({
   ],
   pages: { signIn: "/ingreso" },
   callbacks: {
-    session: async (token, user, account, profile, isNewUser) => {
-      console.log({ token, user, account, profile, isNewUser });
+    session: async (session, user) => {
+      session.userId = user.sub;
       return Promise.resolve(session);
     },
   },

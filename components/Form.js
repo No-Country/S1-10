@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Symptoms from "./Symptoms";
 import ProblemHealth from "./ProblemHealth";
 import TimeProblem from "./TimeProblem";
+import ModalData from "./ModalData";
 
 import {
   Flex,
@@ -23,11 +24,8 @@ const Form = () => {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     problem: [],
-    checkedItem: false,
     symptom: [],
     time: "7",
-    checkedItemTime: false,
-    checkedRadio: true,
   });
 
   const formTitles = ["Problema", "Tiempo", "Síntomas"];
@@ -89,8 +87,8 @@ const Form = () => {
             }}
             onClick={() => {
               if (page === formTitles.length - 1) {
-                alert("listo");
-                console.log(formData);
+                alert(formData);
+                //console.log(formData);
               } else {
                 setPage((currentPage) => currentPage + 1);
               }

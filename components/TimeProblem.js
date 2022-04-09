@@ -8,17 +8,18 @@ import {
 } from "@chakra-ui/react";
 
 const TiempoProblema = ({ formData, setFormData }) => {
-  const [value, setValue] = useState(formData.time);
+  //const [value, setValue] = useState(formData.time);
 
-  const handleCheck = () => {
+  const handleCheck = (e) => {
     setFormData({
       ...formData,
-      time: value,
+      time: e.target.value,
     });
+    console.log(e.target.value);
     console.log("***  Saved Values  ***");
     console.log(formData);
   };
-  console.log(value);
+  // console.log(value);
 
   return (
     <FormControl id="timeProblem">
@@ -30,7 +31,6 @@ const TiempoProblema = ({ formData, setFormData }) => {
         <RadioGroup
           colorScheme="green"
           name="timeProblem"
-          onChange={setValue}
           value={formData.time}
         >
           <Stack spacing={[1, 5]} direction={["column"]}>

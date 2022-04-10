@@ -42,7 +42,7 @@ import {
               </FormControl>
   
               <Stack spacing={6} direction="row" align="center">
-                <NextLink href = "/salud">
+                <NextLink href = "/problemaSalud">
                 <Button
                   px={38}
                   bg={"blue.400"}
@@ -54,7 +54,7 @@ import {
                   Salud
                 </Button>
                 </NextLink>
-                <NextLink href= "/ambiental">  
+                <NextLink href= "/problemaAmbiental">  
                 <Button
                   px={35}
                   bg={"blue.400"}

@@ -28,7 +28,7 @@ const Form = () => {
     time: "7",
   });
 
-  const formTitles = ["Problema", "Tiempo", "Síntomas"];
+  const formTitles = ["Problema", "Tiempo", "Caracteristicas"];
 
   const pageDisplay = () => {
     if (page == 0)

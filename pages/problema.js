@@ -54,7 +54,7 @@ export default function SimpleCard() {
                   Salud
                 </Button>
               </NextLink>
-              <NextLink href="/ambiental" passHref>
+              <NextLink href="/problemaAmbiental" passHref>
                 <Button
                   px={35}
                   bg={"blue.400"}

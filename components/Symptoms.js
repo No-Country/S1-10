@@ -13,12 +13,10 @@ const Sintomas = ({ formData, setFormData }) => {
       setFormData({
         ...formData,
         symptom: [...formData.symptom, e.target.value],
-        checkedSymptom: true,
       });
     } else {
       setFormData({
         symptom: formData.symptom.pop(),
-        checkedSymptom: false,
       });
     }
     console.log(e.target.checked);

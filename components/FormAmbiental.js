@@ -24,7 +24,7 @@ const Form = () => {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     problem: [],
-    symptom: [],
+    type: [],
     time: "7",
   });
 

@@ -28,13 +28,11 @@ const ProblemAmbiental = ({ formData, setFormData }) => {
       setFormData({
         ...formData,
         problem: [...formData.problem, e.target.value],
-        checkedItem: true,
       });
     } else {
       setFormData({
         ...formData,
         problem: "",
-        checkedItem: false,
       });
     }
     console.log(e.target.checked);

@@ -12,13 +12,11 @@ const TypeAmbiental = ({ formData, setFormData }) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        symptom: [...formData.symptom, e.target.value],
-        checkedSymptom: true,
+        symptom: [...formData.type, e.target.value],
       });
     } else {
       setFormData({
-        symptom: formData.symptom.pop(),
-        checkedSymptom: false,
+        symptom: formData.type.pop(),
       });
     }
     console.log(e.target.checked);
@@ -33,7 +31,6 @@ const TypeAmbiental = ({ formData, setFormData }) => {
     "Estan en una vivienda?",
     "Hay un nido?",
     "Es un area contaminada?",
-    
   ];
 
   return (
@@ -43,7 +40,7 @@ const TypeAmbiental = ({ formData, setFormData }) => {
           ¿Que caracteristica observa?
         </FormLabel>
       </FormControl>
-      <CheckboxGroup colorScheme="green" value={formData.symptom}>
+      <CheckboxGroup colorScheme="green" value={formData.type}>
         <Stack spacing={[1, 5]} direction={["column"]}>
           {tipo.map((item) => (
             <Checkbox key={item} value={item} onChange={handleCheck}>

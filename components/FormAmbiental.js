@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Type from "./typeAmbiental";
-import Problema from "./problemAmbiental";
+import TypeAmbiental from "./TypeAmbiental";
+import ProblemAmbiental from "./ProblemAmbiental";
 import TimeProblem from "./TimeProblem";
 import ModalData from "./ModalData";
 
@@ -32,11 +32,11 @@ const Form = () => {
 
   const pageDisplay = () => {
     if (page == 0)
-      return <Problema formData={formData} setFormData={setFormData} />;
+      return <ProblemAmbiental formData={formData} setFormData={setFormData} />;
     if (page == 1)
       return <TimeProblem formData={formData} setFormData={setFormData} />;
     if (page == 2)
-      return <Type formData={formData} setFormData={setFormData} />;
+      return <TypeAmbiental formData={formData} setFormData={setFormData} />;
   };
 
   return (

@@ -22,7 +22,7 @@ const allProblems = [
   { name: "Otros", checked: false },
 ];
 
-const Problema = ({ formData, setFormData }) => {
+const ProblemAmbiental = ({ formData, setFormData }) => {
   const handleCheck = (e) => {
     if (e.target.checked) {
       setFormData({
@@ -68,4 +68,4 @@ const Problema = ({ formData, setFormData }) => {
   );
 };
 
-export default Problema;
+export default ProblemAmbiental;

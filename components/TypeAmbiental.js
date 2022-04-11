@@ -7,7 +7,7 @@ import {
   CheckboxGroup,
 } from "@chakra-ui/react";
 
-const Type = ({ formData, setFormData }) => {
+const TypeAmbiental = ({ formData, setFormData }) => {
   const handleCheck = (e) => {
     if (e.target.checked) {
       setFormData({
@@ -45,7 +45,7 @@ const Type = ({ formData, setFormData }) => {
       </FormControl>
       <CheckboxGroup colorScheme="green" value={formData.symptom}>
         <Stack spacing={[1, 5]} direction={["column"]}>
-          {symptoms.map((item) => (
+          {tipo.map((item) => (
             <Checkbox key={item} value={item} onChange={handleCheck}>
               {item}
             </Checkbox>
@@ -56,4 +56,4 @@ const Type = ({ formData, setFormData }) => {
   );
 };
 
-export default Type;
+export default TypeAmbiental;

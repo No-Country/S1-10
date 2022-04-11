@@ -1,10 +1,10 @@
 import React from "react";
-import Form from "components/FormAmbiental";
+import FormAmbiental from "components/FormAmbiental";
 
 const problemaAmbiental = () => {
   return (
     <div>
-      <Form />
+      <FormAmbiental />
     </div>
   );
 };

@@ -55,17 +55,17 @@ export default function SimpleCard() {
                   SI
                 </Button>
               </NextLink>
-              <NextLink href = "/despedida">
-              <Button
-                px={35}
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                NO
-              </Button>
+              <NextLink href="/despedida" passHref>
+                <Button
+                  px={35}
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  NO
+                </Button>
               </NextLink>
             </Stack>
           </Stack>

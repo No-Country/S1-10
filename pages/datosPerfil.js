@@ -59,7 +59,7 @@ export default function SignupCard() {
               <Input type="number" />
             </FormControl>
             <Stack spacing={10} pt={2}>
-              <NextLink href="/bienvenida">
+              <NextLink href="/bienvenida" passHref>
                 <Button
                   loadingText="Submitting"
                   size="lg"

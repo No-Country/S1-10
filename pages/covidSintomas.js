@@ -60,7 +60,7 @@ export default function SimpleCard() {
           </Stack>
         </Box>
         <Stack spacing={6} direction="row" align="center">
-          <NextLink href="/problema">
+          <NextLink href="/problema" passHref>
             <Button
               px={38}
               bg={"#3ABEEC"}
@@ -72,7 +72,7 @@ export default function SimpleCard() {
               👈 Volver
             </Button>
           </NextLink>
-          <NextLink href="/recomendaciones">
+          <NextLink href="/recomendaciones" passHref>
             <Button
               px={35}
               bg={"#3ABEEC"}

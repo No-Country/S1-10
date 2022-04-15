@@ -14,7 +14,13 @@ import {
 } from "@chakra-ui/react";
 
 import NextLink from "next/link";
-import { getProviders, getSession, signIn, signOut } from "next-auth/react";
+import {
+  getProviders,
+  getSession,
+  signIn,
+  signOut,
+  useSession,
+} from "next-auth/react";
 import BtnLogin from "./../components/BtnLogin";
 import { useEffect } from "react";
 import Router from "next/router";
@@ -48,6 +54,9 @@ const Ingreso = ({ providers, session }) => {
           boxShadow={"lg"}
           p={8}
         >
+          <Text>
+            Welcome {session ? session.user.name : "No user logged in"}
+          </Text>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email</FormLabel>
@@ -78,7 +87,7 @@ const Ingreso = ({ providers, session }) => {
                 }}
                 onClick={() => signIn(providers.id)}
               >
-                Ingresar con {providers.google.name}
+                Ingresar
               </Button>
 
               <BtnLogin provider={providers.google} bgColor={"red"}></BtnLogin>

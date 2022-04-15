@@ -11,7 +11,10 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  Center,
+  Image,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export default function SimpleCard() {
   return (
@@ -23,7 +26,14 @@ export default function SimpleCard() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"3xl"}>Suponer logo</Heading>
+          <Center my={{ base: "30px", lg: "50px" }}>
+            <NextLink href="/overview" passHref>
+              <Image
+                src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1649998648/Tecuido/inicio_zytldn.png"
+                alt="te cuido logo"
+              />
+            </NextLink>
+          </Center>
         </Stack>
         <Box
           rounded={"lg"}

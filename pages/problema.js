@@ -42,7 +42,7 @@ export default function SimpleCard() {
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href="/problemaSalud">
+              <NextLink href="/problemaSalud" passHref>
                 <Button
                   px={38}
                   bg={"#3ABEEC"}
@@ -54,7 +54,7 @@ export default function SimpleCard() {
                   Salud
                 </Button>
               </NextLink>
-              <NextLink href="/problemaAmbiental">
+              <NextLink href="/problemaAmbiental" passHref>
                 <Button
                   px={35}
                   bg={"#3ABEEC"}

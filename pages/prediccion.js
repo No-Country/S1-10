@@ -21,11 +21,11 @@ export default function SimpleCard() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"3xl"}>Conclusión</Heading>
+          <Heading fontSize={"3xl"}>Predicción</Heading>
         </Stack>
         <Box
           rounded={"lg"}
@@ -37,14 +37,15 @@ export default function SimpleCard() {
           <Stack spacing={4} align="center">
             <FormControl id="conclusion">
               <Text fontSize={"2xl"} justify={"center"}>
-                Usted presenta síntomas similares al cuadro de Covid. Debe
-                concurrir a un centro asistencial a realizar el examen
-                correspondiente y seguir las indicaciones del profesional.
+                Si no se realiza un testeo y su afección fuera contagiosa
+                estaria perjudicando a su familia y personas allegadas, ademas
+                de correr el riesgo de que su cuadro empeore con consecuencias
+                irreversibles.
               </Text>
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href="/bienvenida" passHref>
+              <NextLink href="/conclusion" passHref>
                 <Button
                   href={"/problema"}
                   px={38}
@@ -54,10 +55,10 @@ export default function SimpleCard() {
                     bg: "#15a4d7",
                   }}
                 >
-                  Inicio
+                  Anterior
                 </Button>
               </NextLink>
-              <NextLink href="/prediccion" passHref>
+              <NextLink href="/hospitales" passHref>
                 <Button
                   px={35}
                   bg={"#3ABEEC"}

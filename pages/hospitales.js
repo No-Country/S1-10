@@ -21,11 +21,11 @@ export default function SimpleCard() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"3xl"}>Conclusión</Heading>
+          <Heading fontSize={"3xl"}>Hospitales más cercanos</Heading>
         </Stack>
         <Box
           rounded={"lg"}
@@ -37,14 +37,16 @@ export default function SimpleCard() {
           <Stack spacing={4} align="center">
             <FormControl id="conclusion">
               <Text fontSize={"2xl"} justify={"center"}>
-                Usted presenta síntomas similares al cuadro de Covid. Debe
-                concurrir a un centro asistencial a realizar el examen
-                correspondiente y seguir las indicaciones del profesional.
+                Hospital Central +54 (261) 4200063 Htal. Dr. Carlos Pereyra +54
+                (261) 4307641/3224 Hospital El Sauce +54 (261) 4511417/1418
+                Htal. Héctor Elías Gailhac +54 (261) 4511307 Hospital J. N.
+                Lencinas +54 (261) 4272600 Hospital Lagomaggiore +54 (261)
+                4259700/9049 Htal. Pediátrico H. Notti +54 (261) 4450045
               </Text>
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href="/bienvenida" passHref>
+              <NextLink href="/prediccion" passHref>
                 <Button
                   href={"/problema"}
                   px={38}
@@ -54,10 +56,10 @@ export default function SimpleCard() {
                     bg: "#15a4d7",
                   }}
                 >
-                  Inicio
+                  Anterior
                 </Button>
               </NextLink>
-              <NextLink href="/prediccion" passHref>
+              <NextLink href="/bienvenida" passHref>
                 <Button
                   px={35}
                   bg={"#3ABEEC"}
@@ -66,7 +68,7 @@ export default function SimpleCard() {
                     bg: "#15a4d7",
                   }}
                 >
-                  Siguiente
+                  Inicio
                 </Button>
               </NextLink>
             </Stack>

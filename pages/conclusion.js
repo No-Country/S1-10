@@ -21,11 +21,11 @@ export default function SimpleCard() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("#F8F7F2", "gray.800")}
+      bg={useColorModeValue("gray.50", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"3xl"}>Salud</Heading>
+          <Heading fontSize={"3xl"}>Conclusión</Heading>
         </Stack>
         <Box
           rounded={"lg"}
@@ -35,35 +35,38 @@ export default function SimpleCard() {
           align="center"
         >
           <Stack spacing={4} align="center">
-            <FormControl id="bienvenida">
-              <FormLabel fontSize={"2xl"} justify={"center"}>
-                ¿Presenta Mas Sintomas?
-              </FormLabel>
+            <FormControl id="conclusion">
+              <Text fontSize={"2xl"} justify={"center"}>
+                Usted presenta síntomas similares al cuadro de Covid. Debe
+                concurrir a un centro asistencial a realizar el examen
+                correspondiente y seguir las indicaciones del profesional.
+              </Text>
             </FormControl>
 
             <Stack spacing={6} direction="row" align="center">
-              <NextLink href="/covidSintomas">
+              <NextLink href="/bienvenida" passHref>
                 <Button
+                  href={"/problema"}
                   px={38}
-                  bg={"#3ABEEC"}
+                  bg={"blue.400"}
                   color={"white"}
                   _hover={{
-                    bg: "#15a4d7",
+                    bg: "blue.500",
                   }}
                 >
-                  Si
+                  Inicio
                 </Button>
               </NextLink>
-              <NextLink href="/">
+              <NextLink href="/prediccion" passHref>
                 <Button
                   px={35}
-                  bg={"#3ABEEC"}
+                  bg={"blue.400"}
                   color={"white"}
                   _hover={{
-                    bg: "#15a4d7",
+                    bg: "blue.500",
                   }}
                 >
-                  No
+                  Siguiente
                 </Button>
               </NextLink>
             </Stack>

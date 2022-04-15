@@ -28,11 +28,7 @@ const TiempoProblema = ({ formData, setFormData }) => {
           ¿Por cuanto tiempo ha presentado sintomas?
         </FormLabel>
 
-        <RadioGroup
-          colorScheme="green"
-          name="timeProblem"
-          value={formData.time}
-        >
+        <RadioGroup colorScheme="cyan" name="timeProblem" value={formData.time}>
           <Stack spacing={[1, 5]} direction={["column"]}>
             <Radio value="7" onChange={handleCheck}>
               Menos de 7 dias

@@ -58,7 +58,7 @@ export default function SignupCard() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -117,10 +117,10 @@ export default function SignupCard() {
                 <Button
                   loadingText="Submitting"
                   size="lg"
-                  bg={"blue.400"}
+                  bg={"#3ABEEC"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#15a4d7",
                   }}
                 >
                   Registrarse
@@ -130,7 +130,7 @@ export default function SignupCard() {
             <Stack pt={6}>
               <Text align={"center"}>
                 Ya tienes un usuario?{" "}
-                <Link href="/ingreso" color={"blue.400"}>
+                <Link href="/ingreso" color={"#3ABEEC"}>
                   Ingresar
                 </Link>
               </Text>

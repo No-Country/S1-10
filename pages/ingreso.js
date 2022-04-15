@@ -14,7 +14,13 @@ import {
 } from "@chakra-ui/react";
 
 import NextLink from "next/link";
-import { getProviders, getSession, signIn, signOut } from "next-auth/react";
+import {
+  getProviders,
+  getSession,
+  signIn,
+  signOut,
+  useSession,
+} from "next-auth/react";
 import BtnLogin from "./../components/BtnLogin";
 import { useEffect } from "react";
 import Router from "next/router";
@@ -33,13 +39,13 @@ const Ingreso = ({ providers, session }) => {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      // bg={useColorModeValue("gray.50", "gray.800")}
+      // bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>Logueate</Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            Para poder <Link color={"blue.400"}>cuidarte</Link> ✌️
+            Para poder <Link color={"#3ABEEC"}>cuidarte</Link> ✌️
           </Text>
         </Stack>
         <Box
@@ -48,6 +54,9 @@ const Ingreso = ({ providers, session }) => {
           boxShadow={"lg"}
           p={8}
         >
+          <Text>
+            Welcome {session ? session.user.name : "No user logged in"}
+          </Text>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email</FormLabel>
@@ -64,21 +73,21 @@ const Ingreso = ({ providers, session }) => {
                 justify={"space-between"}
               >
                 <Checkbox>Recordar Cuenta</Checkbox>
-                <Link color={"blue.400"}>Olvidaste la contraseña?</Link>
+                <Link color={"#3ABEEC"}>Olvidaste la contraseña?</Link>
                 <NextLink href="/registro" passHref>
-                  <Link color={"blue.400"}>No tienes cuenta?</Link>
+                  <Link color={"#3ABEEC"}>No tienes cuenta?</Link>
                 </NextLink>
               </Stack>
               {/* <NextLink href="/bienvenida" passHref></NextLink> */}
               <Button
-                bg={"blue.400"}
+                bg={"#3ABEEC"}
                 color={"white"}
                 _hover={{
-                  bg: "blue.500",
+                  bg: "#15a4d7",
                 }}
                 onClick={() => signIn(providers.id)}
               >
-                Ingresar con {providers.google.name}
+                Ingresar
               </Button>
 
               <BtnLogin provider={providers.google} bgColor={"red"}></BtnLogin>
@@ -87,10 +96,10 @@ const Ingreso = ({ providers, session }) => {
                 bgColor={"blue"}
               ></BtnLogin>
               <Button
-                bg={"blue.400"}
+                bg={"#3ABEEC"}
                 color={"white"}
                 _hover={{
-                  bg: "blue.500",
+                  bg: "#15a4d7",
                 }}
                 onClick={() => signOut()}
               >

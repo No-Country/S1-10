@@ -40,7 +40,7 @@ const TypeAmbiental = ({ formData, setFormData }) => {
           ¿Que caracteristica observa?
         </FormLabel>
       </FormControl>
-      <CheckboxGroup colorScheme="green" value={formData.type}>
+      <CheckboxGroup colorScheme="cyan" value={formData.type}>
         <Stack spacing={[1, 5]} direction={["column"]}>
           {tipo.map((item) => (
             <Checkbox key={item} value={item} onChange={handleCheck}>

@@ -12,16 +12,17 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { getSession, signIn, signOut } from "next-auth/react";
 
 import NextLink from "next/link";
 
-export default function SimpleCard() {
+export default function Bienvenida() {
   return (
     <Flex
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -46,10 +47,10 @@ export default function SimpleCard() {
                 <Button
                   href={"/problema"}
                   px={38}
-                  bg={"blue.400"}
+                  bg={"#3ABEEC"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#15a4d7",
                   }}
                 >
                   SI
@@ -58,10 +59,10 @@ export default function SimpleCard() {
               <NextLink href="/despedida" passHref>
                 <Button
                   px={35}
-                  bg={"blue.400"}
+                  bg={"#3ABEEC"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#15a4d7",
                   }}
                 >
                   NO
@@ -74,3 +75,22 @@ export default function SimpleCard() {
     </Flex>
   );
 }
+/* 
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  console.log("Get Server side: ", session);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/ingreso",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+}; */

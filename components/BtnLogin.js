@@ -20,7 +20,7 @@ const BtnLogin = ({ provider, bgColor }) => {
 };
 
 BtnLogin.defaultProps = {
-  bgColor: "blue.400",
+  bgColor: "#3ABEEC",
 };
 
 export default BtnLogin;

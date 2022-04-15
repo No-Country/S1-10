@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import Symptoms from "./Symptoms";
 import ProblemHealth from "./ProblemHealth";
 import TimeProblem from "./TimeProblem";
-import ModalData from "./ModalData";
 
 import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
   Flex,
   Box,
   FormControl,
@@ -14,8 +21,9 @@ import {
   useColorModeValue,
   Stack,
   Link,
-  Button,
   Heading,
+  Lorem,
+  useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import axios from "axios";
@@ -27,6 +35,8 @@ const Form = () => {
     symptom: [],
     time: "7",
   });
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const formTitles = ["Problema", "Tiempo", "Síntomas"];
 
@@ -87,8 +97,8 @@ const Form = () => {
             }}
             onClick={() => {
               if (page === formTitles.length - 1) {
-                alert(formData);
-                //console.log(formData);
+                onOpen();
+                // alert(formData);
               } else {
                 setPage((currentPage) => currentPage + 1);
               }
@@ -96,6 +106,24 @@ const Form = () => {
           >
             {page === formTitles.length - 1 ? "Enviar" : "Siguiente 👉"}
           </Button>
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>Formulario Enviado</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                A continuación podrás ver las conclusiones y recomendaciones
+              </ModalBody>
+
+              <ModalFooter>
+                <NextLink href="/conclusion" passHref>
+                  <Button colorScheme="cyan" mr={3} onClick={onClose}>
+                    Ok
+                  </Button>
+                </NextLink>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </Stack>
       </Stack>
     </Flex>

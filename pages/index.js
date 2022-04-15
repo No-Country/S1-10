@@ -1,6 +1,15 @@
 import Head from "next/head";
 import { getSession, signIn, signOut, useSession } from "next-auth/react";
 import Sidebar from "./../components/Sidebar";
+import NextLink from "next/link";
+
+import {
+  useColorModeValue,
+  Image,
+  Button,
+  Flex,
+  Center,
+} from "@chakra-ui/react";
 
 const Home = () => {
   //{ session } console.log("Home function: ", session)
@@ -20,16 +29,21 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        Home
-        <h1>App te cuido, {session ? session.user.name : "Not signed in"}</h1>
-        <p>
-          {!session && (
-            <>
-              Not signed <br />
-              <button onClick={() => signIn()}>SignIn</button>
-            </>
-          )}
-        </p>
+        <Flex
+          minH={"100vh"}
+          align={"center"}
+          justify={"center"}
+          bg={useColorModeValue("#F8F7F2", "gray.800")}
+        >
+          <Center my={{ base: "30px", lg: "50px" }}>
+            <NextLink href="/overview" passHref>
+              <Image
+                src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1649998648/Tecuido/inicio_zytldn.png"
+                alt="te cuido logo"
+              />
+            </NextLink>
+          </Center>
+        </Flex>
       </main>
       {/*  
       <Sidebar />

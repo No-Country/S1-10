@@ -48,7 +48,7 @@ const ProblemAmbiental = ({ formData, setFormData }) => {
         <FormLabel fontSize={"2xl"} justify={"center"}>
           ¿Cuál es tu problema?
         </FormLabel>
-        <CheckboxGroup colorScheme="green" value={formData.problem}>
+        <CheckboxGroup colorScheme="cyan" value={formData.problem}>
           <Stack spacing={[1, 5]} direction={["column"]}>
             {allProblems.map((item) => (
               <Checkbox

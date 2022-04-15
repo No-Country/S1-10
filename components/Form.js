@@ -44,7 +44,7 @@ const Form = () => {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("#F8F7F2", "gray.800")}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -63,10 +63,10 @@ const Form = () => {
         <Stack spacing={6} direction="row" align="center">
           <Button
             px={38}
-            bg={"blue.400"}
+            bg={"#3ABEEC"}
             color={"white"}
             _hover={{
-              bg: "blue.500",
+              bg: "#15a4d7",
             }}
             onClick={() => {
               if (page === 0) {
@@ -80,10 +80,10 @@ const Form = () => {
           </Button>
           <Button
             px={35}
-            bg={"blue.400"}
+            bg={"#3ABEEC"}
             color={"white"}
             _hover={{
-              bg: "blue.500",
+              bg: "#15a4d7",
             }}
             onClick={() => {
               if (page === formTitles.length - 1) {

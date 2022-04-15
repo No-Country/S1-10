@@ -47,10 +47,10 @@ export default function Bienvenida() {
                 <Button
                   href={"/problema"}
                   px={38}
-                  bg={"blue.400"}
+                  bg={"#3ABEEC"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#15a4d7",
                   }}
                 >
                   SI
@@ -59,10 +59,10 @@ export default function Bienvenida() {
               <NextLink href="/despedida" passHref>
                 <Button
                   px={35}
-                  bg={"blue.400"}
+                  bg={"#3ABEEC"}
                   color={"white"}
                   _hover={{
-                    bg: "blue.500",
+                    bg: "#15a4d7",
                   }}
                 >
                   NO

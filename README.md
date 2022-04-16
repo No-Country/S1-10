@@ -99,4 +99,10 @@ openssl rand -base64 32
 
 https://react-icons.github.io/react-icons/icons?name=fi
 
-// checkbox 
+// checkbox
+
+### Web manifest generator
+
+https://www.simicart.com/manifest-generator.html
+improve PwA style
+https://samselikoff.com/blog/8-tips-to-make-your-website-feel-like-an-ios-app

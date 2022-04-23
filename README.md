@@ -1,22 +1,5 @@
 # Te Cuido web App
 
-### Here you'll find the :
-
-![](./images/frontend.jpg)
-
----
-
-## How to login to the app
-
-![](./images/backend-admin.jpg)
-
-## What can you do with it:
-
-![](./images/backend-dashboard.jpg)
-
-## What do you get in return:
-
-![](./images/backend-API-rest.jpg)
 
 ---
 
@@ -50,7 +33,8 @@ Team who participated in this project.
 
 ## Where can you find our work?
 
-### [Working website](http://no-country-c03-g57-frontend.herokuapp.com/)
+### [Working website](https://tecuido.vercel.app/)
+### [UI Design](https://www.behance.net/gallery/142261551/te-cuido)
 
 ---
 
